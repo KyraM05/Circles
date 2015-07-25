@@ -7,6 +7,8 @@
 	var squareX = canvas.height/4;
 	var squareY = canvas.width/4;
 	var velocity = 4;
+	var colorTable = ['blue', 'red', 'green', 'yellow', 'pink', 'black', 'purple'];
+	var colorTableIndex = 0;
 	document.onkeydown = moveObject;
 	
 	var circle1 = new Circle(centerX, centerY, 70, 'green');
@@ -45,6 +47,15 @@
 			centerX = centerX + 10;
 			}
 			circlecolor = 'red';
+		}
+		else if (e.keyCode == '32'){
+			if(colorTableIndex < 7){
+			colorTableIndex = colorTableIndex + 1;
+			}
+			else if(colorTableIndex == 7){
+				colorTableIndex = 0;
+			}
+			circlecolor = colorTable[colorTableIndex];
 		}
 	}
 	
