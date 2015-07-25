@@ -13,6 +13,7 @@
 	var square1 = new Square(squareX, squareY, 70, 70, 'blue');
 	//using circle 
 	
+	var circlecolor = 'green';
 	var faster = setInterval(goFaster, 2500);
 	var eraseInterval = setInterval(erase, 100);
 	var circleInterval = setInterval(drawCircle, 100);
@@ -22,21 +23,33 @@
 	function moveObject(e) {
     e = e || window.event;
 		if (e.keyCode == '38') {
+			if(centerY - 70 > 0){
 			centerY = centerY - 10;
+			}
+			circlecolor = 'blue';
 		}
 		else if (e.keyCode == '40') {
+			if(centerY + 70 < 600){
 			centerY = centerY + 10;
+			}
+			circlecolor = 'green';
 		}
 		else if (e.keyCode == '37') {
+			if(centerX - 70 > 0){
 			centerX = centerX - 10;
+			}
+			circlecolor = 'yellow';
 		}
 		else if (e.keyCode == '39') {
+			if(centerX + 70 < 1000){
 			centerX = centerX + 10;
+			}
+			circlecolor = 'red';
 		}
 	}
 	
 	function goFaster(){
-			velocity = velocity + 4;
+		velocity = velocity + 4;
 	};
 		
     function Square(squareX, squareY, width, height, color){
@@ -50,7 +63,7 @@
 	function Circle(centerX, centerY, radius, color){
       context.beginPath();
       context.arc(centerX, centerY, radius, 0, 2 * Math.PI, false);
-      context.fillStyle = color;
+      context.fillStyle = circlecolor;
       context.fill();
 	}
 	//circle function
