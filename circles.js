@@ -4,7 +4,7 @@
 	
 	var centerX = canvas.height/2 + 500;
 	var centerY = canvas.width/2 - 50;
-	var squareX = canvas.height/4;
+	var squareX = canvas.height/4; 
 	var squareY = canvas.width/4;
 	var velocity = 4;
 	var colorTable = ['blue', 'red', 'green', 'yellow', 'pink', 'black', 'purple'];
